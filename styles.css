@@ -1,7 +1,17 @@
 img {
-    width: 200px;
+    width: 400px;
 }
 body {
+    background-image: -webkit-gradient(
+	left top,
+	color-stop(0.50, #D61C1F),
+	color-stop(0.50, #F57600)
+);
+background-image: -o-linear-gradient(top, #D61C1F 0%, #F57600 14%);
+background-image: -moz-linear-gradient(top, #D61C1F 0%, #F57600 14%);
+background-image: -webkit-linear-gradient(top, #D61C1F 0%, #F57600 14%);
+background-image: -ms-linear-gradient(top, #1D61C1F 0%, #F57600 14%);
+background-image: linear-gradient(to bottem, #D61C1F 0%, #F57600 14%);
     text-align: center;
-    font-family: "Arial";
+    font-family: "Aries";
 }
