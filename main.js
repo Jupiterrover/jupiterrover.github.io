@@ -1,14 +1,35 @@
-function sayThatWasEasy() {
-  var thatWasEasy = new Audio("that_was_easy.mp3");
-  thatWasEasy.play();
+var NUM_CIRCLES = 10;
+var circleDiameter;
+var circleRadius;
+
+function setup(){
+    createCanvas(1000, 1000);
+    circleDiameter = width/NUM_CIRCLES;
+    circleRadius = circleDiameter/2;
+    
+    
 }
 
-$("#easy").on("click", sayThatWasEasy);
-
-$(document).keypress(delegateKeypress);
-
-function delegateKeypress(event) {
-  if (event.charCode == 32) {
-    $("#easy").trigger("click");
-  }
+function draw(){
+    var isShifted = false;
+    
+    var y = height;
+    while (y >= 0 ){//height){
+        
+        var x;
+        
+        if (isShifted) {
+            x = circleRadius;
+        } else {
+            x = 0;
+        }
+        
+        while (x <= width){
+            ellipse(x,y, circleDiameter, circleDiameter);
+            x = x + circleDiameter;
+        }
+        
+        y = y - circleDiameter;
+        isShifted = !isShifted;
+    }
 }
